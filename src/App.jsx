@@ -36,11 +36,11 @@ function App() {
     
 //to filter the list acording to year selected by user
     let filteryr = dateData.filter((data) => {
-        if (filterYear === "allYear") {
+        if (filterYear == "allYear") {
             return data;
         }
-        else if(data.date.getFullYear() === filterYear) {
-            return data.date.getFullYear() === filterYear;
+        else if(data.date.getFullYear() == filterYear) {
+            return data.date.getFullYear() == filterYear;
         }
         else{
             return 0;
@@ -50,11 +50,11 @@ function App() {
 
 
     let filterMnth = filteryr.filter((data)=>{
-        if(filterMonth === "allMonths"){
+        if(filterMonth == "allMonths"){
             return data;
         }
-        else if (data.date.toLocaleString("en-us", { month: "long" }) === filterMonth){
-         return   data.date.toLocaleString("en-us", { month: "long" }) === filterMonth
+        else if (data.date.toLocaleString("en-us", { month: "long" }) == filterMonth){
+         return   data.date.toLocaleString("en-us", { month: "long" }) == filterMonth
         }
         else{
             return 0;
@@ -62,11 +62,11 @@ function App() {
     })
 
     let filterDt = filterMnth.filter((data)=>{
-        if(filterDate === "allDates" ){
+        if(filterDate == "allDates" ){
             return data;
         }
-        else if(data.date.getDate() === filterDate){
-            return data.date.getDate() === filterDate;
+        else if(data.date.getDate() == filterDate){
+            return data.date.getDate() == filterDate;
         }
         else{
             return 0;
@@ -100,7 +100,7 @@ const sortBy = arr => {
                 <FilterDateList fromFilterYear={fromFilterYear} fromFilterMonth={fromFilterMonth} fromFilterDate={fromFilterDate}/>
                 <Graph filteryr = {filteryr} />
                 {
-                    filterDt === 0  && <h3 className="nodataf">No Data Found</h3>
+                    filterDt == 0  && <h3 className="nodataf">No Data Found</h3>
                 }
                 {
                   filterDt.map(list => {
